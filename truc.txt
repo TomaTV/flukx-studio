@@ -1,0 +1,3 @@
+- Système FR/EN automatique
+- UI Page Error 404
+- Ajout section profil (btn cv)
