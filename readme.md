@@ -1,6 +1,6 @@
 # Flukx Studio
 
-![Page d'accueil](https://i.imgur.com/f7R6u2q.jpeg)
+![Page d'accueil](https://i.imgur.com/WafTNIL.jpeg)
 
 ## 🚀 Introduction
 
