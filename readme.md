@@ -47,5 +47,5 @@ Ce projet est sous licence [Creative Commons CC0 1.0 Universal](https://creative
 
 Si vous avez des questions, n'hésitez pas à nous contacter :
 
-- **Email** : contact@flukxstudio.com
+- **Email** : contact@flukxstudio.fr
 - **LinkedIn** : [@FlukxStudio](https://www.linkedin.com/company/flukx)
