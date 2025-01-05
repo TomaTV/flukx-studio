@@ -1,11 +1,14 @@
 # Flukx Studio
 
 ![Page d'accueil](https://i.imgur.com/WafTNIL.jpeg)
+[![Next][Next.js]](https://nextjs.org/)
+[![TailwindCSS][TailwindCSS.com]](https://tailwindcss.com/)
 
 ## 🚀 Introduction
 
-Flukx Studio est un projet web moderne construit avec [![Next][Next.js]][Next-url] et [![TailwindCSS][TailwindCSS.com]][TailwindCSS-url]. Nous créons des sites web modernes et des interfaces intuitives, tout en développant des identités visuelles uniques. 
+Flukx Studio est un projet web moderne construit avec [Next.js](https://nextjs.org/) et [![TailwindCSS][TailwindCSS.com]](https://tailwindcss.com/). Nous créons des sites web modernes et des interfaces intuitives, tout en développant des identités visuelles uniques. 
 Fait avec ❤️ par Flukx Studio.
+
 
 ## 📦 Installation
 
