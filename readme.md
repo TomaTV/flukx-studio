@@ -4,7 +4,7 @@
 
 ## 🚀 Introduction
 
-Flukx Studio est un projet web moderne construit avec [Next.js](https://nextjs.org/) et [Tailwind CSS](https://tailwindcss.com/). Nous créons des sites web modernes et des interfaces intuitives, tout en développant des identités visuelles uniques. 
+Flukx Studio est un projet web moderne construit avec [![Next][Next.js]][Next-url] et [![TailwindCSS][TailwindCSS.com]][TailwindCSS-url]. Nous créons des sites web modernes et des interfaces intuitives, tout en développant des identités visuelles uniques. 
 Fait avec ❤️ par Flukx Studio.
 
 ## 📦 Installation
@@ -49,3 +49,8 @@ Si vous avez des questions, n'hésitez pas à nous contacter :
 
 - **Email** : contact@flukxstudio.fr
 - **LinkedIn** : [@FlukxStudio](https://www.linkedin.com/company/flukx)
+
+[Next.js]: https://img.shields.io/badge/Next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[Next-url]: https://nextjs.org/
+[TailwindCSS.com]: https://img.shields.io/badge/TailwindCSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white
+[TailwindCSS-url]: https://tailwindcss.com/
