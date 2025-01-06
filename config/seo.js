@@ -13,7 +13,7 @@ export const defaultSEO = {
       "Spécialisé en développement web moderne (React, Next.js, Tailwind CSS) et design UI/UX. Créez des expériences utilisateur uniques avec Flukx Studio.",
     images: [
       {
-        url: "/img/preview.png",
+        url: "https://flukxstudio.fr/img/preview.avif",
         width: 1200,
         height: 630,
         alt: "Flukx Studio - Développement Web et Design UI/UX",
@@ -21,7 +21,7 @@ export const defaultSEO = {
     ],
     locale: "fr_FR",
     alternateLocale: ["en_US"],
-    siteName: "Flukx Studio"
+    siteName: "Flukx Studio",
   },
   twitter: {
     handle: "@flukxstudio",
@@ -55,36 +55,36 @@ export const defaultSEO = {
     {
       rel: "alternate",
       hrefLang: "fr",
-      href: "https://flukxstudio.fr/fr"
+      href: "https://flukxstudio.fr/fr",
     },
     {
       rel: "alternate",
       hrefLang: "en",
-      href: "https://flukxstudio.fr/en"
+      href: "https://flukxstudio.fr/en",
     },
     {
       rel: "alternate",
       hrefLang: "x-default",
-      href: "https://flukxstudio.fr"
-    }
+      href: "https://flukxstudio.fr",
+    },
   ],
   languageAlternates: [
     {
       hrefLang: "fr",
-      href: "https://flukxstudio.fr/fr"
+      href: "https://flukxstudio.fr/fr",
     },
     {
       hrefLang: "en",
-      href: "https://flukxstudio.fr/en"
-    }
-  ]
+      href: "https://flukxstudio.fr/en",
+    },
+  ],
 };
 
 export const jsonLd = {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
   name: "Flukx Studio",
-  image: "https://flukxstudio.fr/img/preview.png",
+  image: "https://flukxstudio.fr/img/preview.avif",
   description:
     "Flukx Studio, expert en développement web et design UI/UX à Paris. Nous créons des solutions digitales sur mesure adaptées à vos besoins.",
   address: {
