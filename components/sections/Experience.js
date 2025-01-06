@@ -1,12 +1,19 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { useIsMobile } from "../../hooks/useIsMobile";
+import { useLanguage } from "../../hooks/useLanguage";
+
+const CustomStar = () => (
+  <svg viewBox="0 0 24 24" width="28" height="28" className="fill-gray-900">
+    <path d="M12 2 L14 10 L22 12 L14 14 L12 22 L10 14 L2 12 L10 10 Z" />
+  </svg>
+);
 
 const Experience = () => {
   const containerRef = useRef(null);
   const isMobile = useIsMobile();
+  const { t } = useLanguage();
 
-  // Optimisation du scroll sur mobile
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"],
@@ -14,56 +21,70 @@ const Experience = () => {
 
   const experiences = [
     {
-      period: "2023 - 2028",
-      title: "MASTER Manager de l'innovation Numérique",
-      company: "Web School Factory",
-      location: "Paris",
-      type: "education",
+      period: t("experience.experiences.0.period"),
+      title: t("experience.experiences.0.title"),
+      company: t("experience.experiences.0.company"),
+      location: t("experience.experiences.0.location"),
+      type: "formation",
     },
     {
-      period: "2024",
-      title: "Designer UI/UX",
-      company: "Iypaper",
-      tasks: ["Conception UX/UI", "Gestion de projet", "Prototypage"],
-      type: "professional",
-    },
-    {
-      period: "2023 - Présent",
-      title: "Freelance Developer & Designer",
-      company: "Flukx",
+      period: t("experience.experiences.1.period"),
+      title: t("experience.experiences.1.title"),
+      company: t("experience.experiences.1.company"),
       tasks: [
-        "Développement Web & Design",
-        "Gestion de projet",
-        "Consultation & Stratégie",
+        t("experience.experiences.1.tasks.0"),
+        t("experience.experiences.1.tasks.1"),
+        t("experience.experiences.1.tasks.2"),
       ],
       type: "professional",
     },
     {
-      period: "2019 - 2022",
-      title: "Chef de projet & Développeur",
-      company: "Affranchie",
+      period: t("experience.experiences.2.period"),
+      title: t("experience.experiences.2.title"),
+      company: t("experience.experiences.2.company"),
       tasks: [
-        "Gestion d'équipe",
-        "Développement (Web & Lua)",
-        "Création d'une communauté (3000 membres)",
+        t("experience.experiences.2.tasks.0"),
+        t("experience.experiences.2.tasks.1"),
+        t("experience.experiences.2.tasks.2"),
+      ],
+      type: "education",
+    },
+    {
+      period: t("experience.experiences.3.period"),
+      title: t("experience.experiences.3.title"),
+      company: t("experience.experiences.3.company"),
+      tasks: [
+        t("experience.experiences.3.tasks.0"),
+        t("experience.experiences.3.tasks.1"),
+        t("experience.experiences.3.tasks.2"),
+      ],
+      type: "professional",
+    },
+    {
+      period: t("experience.experiences.4.period"),
+      title: t("experience.experiences.4.title"),
+      company: t("experience.experiences.4.company"),
+      tasks: [
+        t("experience.experiences.4.tasks.0"),
+        t("experience.experiences.4.tasks.1"),
+        t("experience.experiences.4.tasks.2"),
       ],
       type: "professional",
     },
   ];
 
-  // Animation optimisées pour mobile
   const fadeInUpVariants = {
-    hidden: { 
-      opacity: 0, 
-      y: isMobile ? 10 : 20 
+    hidden: {
+      opacity: 0,
+      y: isMobile ? 10 : 20,
     },
-    visible: { 
-      opacity: 1, 
+    visible: {
+      opacity: 1,
       y: 0,
       transition: {
-        duration: isMobile ? 0.3 : 0.5
-      }
-    }
+        duration: isMobile ? 0.3 : 0.5,
+      },
+    },
   };
 
   return (
@@ -79,55 +100,50 @@ const Experience = () => {
           variants={fadeInUpVariants}
           className="text-3xl sm:text-6xl font-bold text-gray-900 mb-12 sm:mb-24 text-center font-grotesk"
         >
-          Parcours
+          {t("experience.title")}
         </motion.h2>
 
         <div className="relative">
-          {/* Timeline line avec gradient optimisé */}
-          <div className="absolute left-[28px] md:left-1/2 h-full w-[2px] bg-gradient-to-b from-gray-200 via-gray-300 to-gray-200 transform-gpu" />
-
           {experiences.map((exp, index) => {
-            // Optimisation des animations de scroll pour mobile
-            const scaleProgress = useTransform(
+            const lineProgress = useTransform(
               scrollYProgress,
-              [index * (isMobile ? 0.25 : 0.2), index * (isMobile ? 0.25 : 0.2) + 0.1],
-              [isMobile ? 0.95 : 0.8, 1]
+              [index * 0.15, (index + 1) * 0.15],
+              ["0%", "100%"]
             );
 
-            const opacityProgress = useTransform(
-              scrollYProgress,
-              [index * (isMobile ? 0.25 : 0.2), index * (isMobile ? 0.25 : 0.2) + 0.1],
-              [0, 1]
-            );
+            const contentBaseClass = index % 2 === 0 ? "md:pl-20" : "md:pr-20";
+            const flexDirection = index % 2 === 0 ? "md:flex-row-reverse" : "";
 
             return (
               <motion.div
                 key={index}
-                style={{
-                  opacity: opacityProgress,
-                  scale: scaleProgress,
-                  willChange: 'transform, opacity'
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeOut",
+                  },
                 }}
-                className={`relative flex flex-col md:flex-row items-start group mb-16 sm:mb-32 last:mb-0 ${
-                  index % 2 === 0 ? "md:flex-row-reverse" : ""
-                }`}
+                viewport={{ once: true }}
+                className={`relative flex flex-col md:flex-row items-start group mb-20 last:mb-16 ${flexDirection}`}
               >
-                {/* Timeline dot avec animation optimisée */}
-                <div className="absolute left-6 md:left-1/2 -ml-1.5 md:-ml-2">
-                  <div className={`
-                    w-3 h-3 sm:w-4 sm:h-4 rounded-full bg-gray-900 transform-gpu
-                    ${!isMobile ? 'group-hover:scale-150 transition-transform duration-300' : ''}
-                  `} />
-                  {!isMobile && (
-                    <div className="absolute inset-0 w-4 h-4 rounded-full bg-gray-900/20 animate-ping" />
-                  )}
+                <motion.div
+                  className="absolute left-[28px] md:left-1/2 top-16 w-[2px] h-[calc(100%-4rem)] bg-black"
+                  style={{
+                    scaleY: lineProgress,
+                    transformOrigin: "top",
+                    opacity: lineProgress,
+                  }}
+                />
+
+                <div className="absolute left-6 md:left-1/2 -ml-3.5 md:-ml-3.5 bg-white py-4 z-10">
+                  <CustomStar />
                 </div>
 
-                {/* Contenu */}
                 <div
-                  className={`pl-16 md:pl-0 w-full md:w-1/2 ${
-                    index % 2 === 0 ? "md:pl-20" : "md:pr-20"
-                  }`}
+                  className={`pl-16 md:pl-0 w-full md:w-1/2 pt-1 ${contentBaseClass}`}
                 >
                   <span className="inline-block text-xs sm:text-sm text-gray-500 font-inter tracking-wide mb-2 sm:mb-4">
                     {exp.period}
@@ -146,20 +162,20 @@ const Experience = () => {
                     <motion.ul
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
-                      transition={{ 
-                        staggerChildren: isMobile ? 0.05 : 0.1,
-                        duration: isMobile ? 0.3 : 0.5
+                      transition={{
+                        staggerChildren: 0.1,
+                        duration: 0.5,
                       }}
-                      className="space-y-1.5 sm:space-y-2"
+                      className="space-y-1.5 sm:space-y-2 mb-4"
                     >
                       {exp.tasks.map((task, i) => (
                         <motion.li
                           key={i}
-                          initial={{ x: isMobile ? -5 : -10, opacity: 0 }}
+                          initial={{ x: -10, opacity: 0 }}
                           whileInView={{ x: 0, opacity: 1 }}
-                          transition={{ 
-                            delay: i * (isMobile ? 0.05 : 0.1),
-                            duration: isMobile ? 0.3 : 0.5
+                          transition={{
+                            delay: i * 0.1,
+                            duration: 0.5,
                           }}
                           className="font-inter text-sm sm:text-base text-gray-500 flex items-center gap-2 sm:gap-3"
                         >
@@ -170,15 +186,16 @@ const Experience = () => {
                     </motion.ul>
                   )}
 
-                  {/* Tag avec style optimisé */}
                   <span
-                    className={`mt-3 sm:mt-4 inline-block px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-inter ${
+                    className={`inline-block px-3 sm:px-4 py-1 rounded-full text-xs sm:text-sm font-inter ${
                       exp.type === "education"
                         ? "bg-blue-100 text-blue-800"
+                        : exp.type === "formation"
+                        ? "bg-orange-100 text-orange-800"
                         : "bg-green-100 text-green-800"
                     }`}
                   >
-                    {exp.type === "education" ? "Formation" : "Professionnel"}
+                    {t(`experience.${exp.type}`)}
                   </span>
                 </div>
               </motion.div>
@@ -187,11 +204,7 @@ const Experience = () => {
         </div>
       </div>
 
-      {/* Gradient de fondu en bas optimisé */}
-      <div 
-        className="absolute bottom-0 left-0 right-0 h-[20vh] sm:h-[30vh] bg-gradient-to-b from-transparent to-white pointer-events-none"
-        style={{ willChange: 'opacity' }}
-      />
+      <div className="absolute bottom-0 left-0 right-0 h-[20vh] sm:h-[30vh] bg-gradient-to-b from-transparent to-white pointer-events-none" />
     </section>
   );
 };

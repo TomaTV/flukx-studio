@@ -1,3 +1,4 @@
 - Système FR/EN automatique
-- UI Page Error 404
-- Ajout section profil (btn cv)
+- améliorer UI expertise
+- trouver une utilité des boutons dans le hero
+- améliorer le site en terme/performance si c'est encore possible

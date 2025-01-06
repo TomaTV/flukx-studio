@@ -1,9 +1,12 @@
-import '../styles/globals.css';
-import Layout from '../components/Layout';
-import { useSmoothScroll } from '../hooks/useSmoothScroll';
+import "../styles/globals.css";
+import Layout from "../components/Layout";
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
+import { createContext, useEffect, useState } from "react";
+
+export const LanguageContext = createContext();
 
 function MyApp({ Component, pageProps }) {
-  useSmoothScroll()
+  useSmoothScroll();
 
   return (
     <Layout>

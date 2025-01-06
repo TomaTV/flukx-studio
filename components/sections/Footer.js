@@ -2,9 +2,12 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowUpRight, ArrowUp } from "lucide-react";
 import ContactModal from "../ContactModal";
+import { useLanguage } from "../../hooks/useLanguage";
 
 const Footer = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const { t } = useLanguage();
 
   const scrollToTop = () => {
     if (window.lenis) {
@@ -38,7 +41,7 @@ const Footer = () => {
           transition={{ delay: 0.3 }}
           className="text-3xl sm:text-4xl font-bold font-grotesk mb-6 sm:mb-8"
         >
-          TRAVAILLONS ENSEMBLE
+          {t("footer.title")}
         </motion.h2>
         <motion.button
           initial={{ opacity: 0, y: 20 }}
@@ -50,7 +53,7 @@ const Footer = () => {
           onClick={() => setIsContactModalOpen(true)}
           className="px-6 sm:px-8 py-2 sm:py-3 border-2 border-gray-900 text-gray-900 font-grotesk text-base sm:text-lg rounded-full hover:bg-gray-900 hover:text-white transition-all duration-300"
         >
-          ME CONTACTER
+          {t("footer.btnfooter")}
         </motion.button>
       </motion.div>
 
@@ -106,7 +109,7 @@ const Footer = () => {
         className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0"
       >
         <p className="text-xs sm:text-sm text-gray-500 font-inter text-center sm:text-left">
-          © {new Date().getFullYear()} Flukx Studio. Tous droits réservés.
+          © {new Date().getFullYear()} Flukx Studio. {t("footer.copyright")}
         </p>
         <motion.button
           whileHover={{ scale: 1.1, rotate: 360 }}

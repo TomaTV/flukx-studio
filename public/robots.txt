@@ -1,5 +1,3 @@
 User-agent: *
 Allow: /
-
-# Sitemaps
 Sitemap: https://flukxstudio.fr/sitemap.xml
