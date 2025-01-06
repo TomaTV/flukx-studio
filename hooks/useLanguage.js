@@ -152,8 +152,8 @@ export const translations = {
     hero: {
       studio: "Creative Studio",
       discuss: "Let's Talk",
-      transform: "Transform Your",
-      ideas: "Ideas Into",
+      transform: "Turn Your Ideas",
+      ideas: "Into",
       reality: "Reality",
       description:
         "We turn your concepts into powerful digital tools designed to grow your business, engage your customers, and leave a lasting impression.",

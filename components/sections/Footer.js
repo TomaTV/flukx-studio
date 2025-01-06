@@ -10,11 +10,34 @@ const Footer = () => {
   const { t } = useLanguage();
 
   const scrollToTop = () => {
-    if (window.lenis) {
-      window.lenis.scrollTo(0, {
-        duration: 2,
-        easing: (t) => 1 - Math.pow(1 - t, 5),
+    const isMobile = window.innerWidth <= 768;
+    const duration = 1000;
+
+    if (isMobile) {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
       });
+    } else {
+      const scrollHeight = document.documentElement.scrollTop;
+      let startTime = null;
+
+      function scrollStep(timestamp) {
+        if (!startTime) startTime = timestamp;
+        const progress = timestamp - startTime;
+        const scrollPosition = Math.max(
+          scrollHeight - (progress / duration) * scrollHeight,
+          0
+        );
+        window.scrollTo(0, scrollPosition);
+
+        if (progress < duration) {
+          requestAnimationFrame(scrollStep); // Continue l'animation
+        }
+      }
+
+      // Lance l'animation du scroll
+      requestAnimationFrame(scrollStep);
     }
   };
 

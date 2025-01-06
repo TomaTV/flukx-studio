@@ -80,14 +80,20 @@ const Hero = () => {
           </span>
         </div>
 
-        <motion.button
-          whileHover={isMobile ? {} : { scale: 1.02 }}
-          whileTap={isMobile ? { scale: 0.95 } : { scale: 0.98 }}
-          className="relative px-4 sm:px-8 py-1.5 sm:py-3 border-2 border-[#4338ca] text-[#4338ca] hover:text-white hover:bg-[#4338ca] font-spaceGrotesk rounded-full transition-all duration-300 flex items-center gap-2 text-[0.6em] sm:text-sm group"
+        <a
+          href="mailto:contact@flukxstudio.fr"
+          target="_blank"
+          rel="noopener noreferrer"
         >
-          <span className="relative z-10">{t("hero.discuss")}</span>
-          <ArrowUpRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-        </motion.button>
+          <motion.button
+            whileHover={isMobile ? {} : { scale: 1.02 }}
+            whileTap={isMobile ? { scale: 0.95 } : { scale: 0.98 }}
+            className="relative px-4 sm:px-8 py-1.5 sm:py-3 border-2 border-[#4338ca] text-[#4338ca] hover:text-white hover:bg-[#4338ca] font-spaceGrotesk rounded-full transition-all duration-300 flex items-center gap-2 text-[0.6em] sm:text-sm group"
+          >
+            <span className="relative z-10">{t("hero.discuss")}</span>
+            <ArrowUpRight className="relative z-10 w-5 h-5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+          </motion.button>
+        </a>
       </motion.div>
 
       {/* Main content */}
@@ -138,6 +144,28 @@ const Hero = () => {
             <motion.button
               whileHover={isMobile ? {} : { scale: 1.02 }}
               whileTap={isMobile ? { scale: 0.95 } : { scale: 0.98 }}
+              onClick={() => {
+                const scrollHeight =
+                  document.documentElement.scrollHeight - window.innerHeight;
+                const duration = 1000;
+                let startTime = null;
+
+                function scrollStep(timestamp) {
+                  if (!startTime) startTime = timestamp;
+                  const progress = timestamp - startTime;
+                  const scrollPosition = Math.min(
+                    (progress / duration) * scrollHeight,
+                    scrollHeight
+                  );
+                  window.scrollTo(0, scrollPosition);
+
+                  if (progress < duration) {
+                    requestAnimationFrame(scrollStep);
+                  }
+                }
+
+                requestAnimationFrame(scrollStep);
+              }}
               className="group relative px-8 sm:px-10 py-4 border-2 bg-gray-900 text-white hover:text-gray-900 hover:bg-transparent hover:border-gray-900 font-spaceGrotesk text-lg sm:text-base rounded-full transition-all duration-300 flex items-center gap-2"
             >
               <span>{t("hero.create")}</span>
