@@ -31,6 +31,7 @@ const Experience = () => {
       period: t("experience.experiences.1.period"),
       title: t("experience.experiences.1.title"),
       company: t("experience.experiences.1.company"),
+      location: t("experience.experiences.1.location"),
       tasks: [
         t("experience.experiences.1.tasks.0"),
         t("experience.experiences.1.tasks.1"),

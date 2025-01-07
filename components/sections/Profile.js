@@ -18,7 +18,7 @@ const Profile = () => {
 
   const imageHeight = useTransform(
     scrollYProgress,
-    [0, 0.8],
+    [0, 0.6],
     isMobile ? ["40vh", "60vh"] : ["30vh", "80vh"]
   );
 
@@ -35,8 +35,8 @@ const Profile = () => {
   );
 
   const nameOpacity = useTransform(scrollYProgress, [0.3, 0.5], [0, 1]);
-  const contentY = useTransform(scrollYProgress, [0.5, 0.7], [200, 0]);
-  const contentOpacity = useTransform(scrollYProgress, [0.5, 0.7], [0, 1]);
+  const contentY = useTransform(scrollYProgress, [0.4, 0.6], [200, 0]);
+  const contentOpacity = useTransform(scrollYProgress, [0.4, 0.6], [0, 1]);
 
   return (
     <section ref={sectionRef} className="relative bg-white">

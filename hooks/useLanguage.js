@@ -112,7 +112,8 @@ export const translations = {
         {
           period: "2024",
           title: "Designer UI/UX",
-          company: "Iypaper  - Stage",
+          company: "Iypaper",
+          location: "Stage",
           tasks: ["Conception UX/UI", "Gestion de projet", "Prototypage"],
           type: "professional",
         },
@@ -259,7 +260,8 @@ export const translations = {
         {
           period: "2024",
           title: "UI/UX Designer",
-          company: "Iypaper - Internship",
+          company: "Iypaper",
+          location: "Internship",
           tasks: ["UX/UI Design", "Project Management", "Prototyping"],
           type: "education",
         },
