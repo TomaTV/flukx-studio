@@ -1,4 +1,2 @@
-- Système FR/EN automatique
-- améliorer UI expertise
-- trouver une utilité des boutons dans le hero
-- améliorer le site en terme/performance si c'est encore possible
+- Améliorer performance mobile (60%) et desktop (78%)
+- Améliorer SEO (voir discord)

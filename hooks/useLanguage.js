@@ -112,7 +112,7 @@ export const translations = {
         {
           period: "2024",
           title: "Designer UI/UX",
-          company: "Iypaper",
+          company: "Iypaper  - Stage",
           tasks: ["Conception UX/UI", "Gestion de projet", "Prototypage"],
           type: "professional",
         },
@@ -126,7 +126,7 @@ export const translations = {
         {
           period: "2023 - Présent",
           title: "Freelance Developer & Designer",
-          company: "Flukx",
+          company: "Flukx Studio",
           tasks: [
             "Développement Web & Design",
             "Gestion de projet",
@@ -259,7 +259,7 @@ export const translations = {
         {
           period: "2024",
           title: "UI/UX Designer",
-          company: "Iypaper",
+          company: "Iypaper - Internship",
           tasks: ["UX/UI Design", "Project Management", "Prototyping"],
           type: "education",
         },
@@ -273,7 +273,7 @@ export const translations = {
         {
           period: "2023 - Present",
           title: "Freelance Developer & Designer",
-          company: "Flukx",
+          company: "Flukx Studio",
           tasks: [
             "Web Development & Design",
             "Project Management",

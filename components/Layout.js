@@ -22,7 +22,9 @@ const Layout = ({ children, pageSEO = {} }) => {
   const router = useRouter();
   const { currentLang } = useLanguage();
   const seo = { ...defaultSEO, ...pageSEO };
-  const currentUrl = `${seo.openGraph.url}${currentLang === 'fr' ? '/fr' : '/en'}${router.pathname}`;
+  const currentUrl = `${seo.openGraph.url}${
+    currentLang === "fr" ? "/fr" : "/en"
+  }${router.pathname}`;
 
   return (
     <>
@@ -42,8 +44,16 @@ const Layout = ({ children, pageSEO = {} }) => {
         <meta name="msapplication-TileColor" content="#4338ca" />
 
         {/* Alternate Languages */}
-        <link rel="alternate" href={`${seo.openGraph.url}/fr${router.pathname}`} hrefLang="fr" />
-        <link rel="alternate" href={`${seo.openGraph.url}/en${router.pathname}`} hrefLang="en" />
+        <link
+          rel="alternate"
+          href={`${seo.openGraph.url}/fr${router.pathname}`}
+          hrefLang="fr"
+        />
+        <link
+          rel="alternate"
+          href={`${seo.openGraph.url}/en${router.pathname}`}
+          hrefLang="en"
+        />
         <link rel="alternate" href={seo.openGraph.url} hrefLang="x-default" />
 
         {/* Open Graph / Facebook */}
@@ -52,9 +62,18 @@ const Layout = ({ children, pageSEO = {} }) => {
         <meta property="og:title" content={seo.openGraph.title} />
         <meta property="og:description" content={seo.openGraph.description} />
         <meta property="og:image" content={seo.openGraph.images[0].url} />
-        <meta property="og:image:width" content={seo.openGraph.images[0].width} />
-        <meta property="og:image:height" content={seo.openGraph.images[0].height} />
-        <meta property="og:locale" content={currentLang === 'fr' ? 'fr_FR' : 'en_US'} />
+        <meta
+          property="og:image:width"
+          content={seo.openGraph.images[0].width}
+        />
+        <meta
+          property="og:image:height"
+          content={seo.openGraph.images[0].height}
+        />
+        <meta
+          property="og:locale"
+          content={currentLang === "fr" ? "fr_FR" : "en_US"}
+        />
         <meta property="og:site_name" content={seo.openGraph.site_name} />
 
         {/* Twitter */}
@@ -66,10 +85,24 @@ const Layout = ({ children, pageSEO = {} }) => {
         <meta name="twitter:image" content={seo.openGraph.images[0].url} />
 
         {/* Favicons */}
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/icon/icon-32x32.png" />
-        <link rel="icon" type="image/png" sizes="64x64" href="/icon/icon-64x64.png" />
-        <link rel="apple-touch-icon" sizes="128x128" href="/icon/icon-128x128.png" />
+        <link rel="icon" href="/icon/favicon.ico" />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/icon/icon-32x32.png"
+        />
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="64x64"
+          href="/icon/icon-64x64.png"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="128x128"
+          href="/icon/icon-128x128.png"
+        />
 
         {/* Schema.org */}
         <script
@@ -78,25 +111,28 @@ const Layout = ({ children, pageSEO = {} }) => {
             __html: JSON.stringify({
               ...jsonLd,
               url: currentUrl,
-              inLanguage: currentLang === 'fr' ? 'fr' : 'en'
+              inLanguage: currentLang === "fr" ? "fr" : "en",
             }),
           }}
         />
       </Head>
 
       <noscript>
-        <div style={{
-          padding: "20px",
-          textAlign: "center",
-          backgroundColor: "#4338ca",
-          color: "white",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          right: 0,
-          zIndex: 9999,
-        }}>
-          Pour une meilleure expérience, veuillez activer JavaScript dans votre navigateur.
+        <div
+          style={{
+            padding: "20px",
+            textAlign: "center",
+            backgroundColor: "#4338ca",
+            color: "white",
+            position: "fixed",
+            top: 0,
+            left: 0,
+            right: 0,
+            zIndex: 9999,
+          }}
+        >
+          Pour une meilleure expérience, veuillez activer JavaScript dans votre
+          navigateur.
         </div>
       </noscript>
 
